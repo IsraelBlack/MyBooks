@@ -2,7 +2,10 @@
   "name": "my-fullstack-collection",
   "version": "0.1.0",
   "description": "Build a fullstack collection app",
-  "repository": "https://https://github.com/dev-academy-challenges/my-fullstack-collection",
+  "repository": {
+    "type": "git",
+    "url": "https://https://github.com/dev-academy-challenges/my-fullstack-collection"
+  },
   "main": "server/index.ts",
   "scripts": {
     "build": "run-s build:client build:server",
