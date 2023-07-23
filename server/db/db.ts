@@ -4,6 +4,6 @@ import connection from "./connection";
 const db = connection
 
 //pull everything from our DB
-export function getAllMovies() {
+export function getAllBooks() {
   return db('books').select('*')
 }
