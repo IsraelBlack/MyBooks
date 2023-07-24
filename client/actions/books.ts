@@ -5,7 +5,7 @@ import * as api from  "../apis/books"
 export const SET_BOOKS = 'SET_BOOKS'
 
 // *Simple Actions
-export function setBooks(books) {
+export function setBooks(books: Book[]) {
   return {
     type: SET_BOOKS,
     payload: books,
