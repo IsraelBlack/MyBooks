@@ -1,9 +1,12 @@
+//? DB Functions
+
 import connection from './connection'
-//todo import { } from "../../models/types"
+import { Book } from "../../models/types"
 
 const db = connection
 
 //pull everything from our DB
 export function getAllBooks(): Promise<Book[]> {
-  return db('books').select('id', 'title', 'author', 'cover', 'rating')
+  return db('books').select('id', 'title', 'author', 'cover', 'rating'
+  )
 }

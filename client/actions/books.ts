@@ -1,4 +1,6 @@
-//todo import types
+//? Actions
+
+import {Book} from '../../models/types' 
 import { ThunkAction } from "../store"
 import * as api from  "../apis/books"
 

@@ -1,5 +1,7 @@
-export interface Book {
-  id: number
+//? MODELS
+
+export interface BookData {
+
   title: string
   author: string
   cover: string
@@ -8,3 +10,10 @@ export interface Book {
   genre: string
   opinion: string
 }
+
+export interface Book extends BookData {
+  id: number
+}
+
+export type Action = 
+| {type: 'SET_BOOKS', payload: Book[]}
