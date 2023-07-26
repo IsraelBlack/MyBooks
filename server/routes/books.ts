@@ -39,7 +39,12 @@ router.delete('/:id', async (req, res) => {
 })
 
 //Create New Item, ID is last part of Array
-
+router.create('/', async (req, res)=> {
+    const book = {
+      ...req.body,
+      
+    }
+})
 
 //Update Existing Item
 
