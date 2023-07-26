@@ -1,7 +1,6 @@
 //? MODELS
 
 export interface BookData {
-
   title: string
   author: string
   cover: string
