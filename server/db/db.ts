@@ -10,6 +10,6 @@ export function getAllBooks(): Promise<Book[]> {
   return db('books').select('id', 'title', 'author', 'cover', 'rating')
 }
 
-export function deleteMovie(id: number): Promise<number> {
+export function deleteBook(id: number): Promise<number> {
   return db('books').delete().where({ id })
 }
