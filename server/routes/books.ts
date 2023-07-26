@@ -16,7 +16,15 @@ router.get('/', async (req, res) => {
 })
 
 //Fetch One book by ID
-
+router.get('/:id', async (req, res) => {
+  try {
+    const id = Number(req.params.id)
+    const oneBook = await db.getOneBook(id)
+    res.json(oneBook)
+  } catch (err) {
+    console.error('Routes error', err)
+  }
+})
 
 //Deletes Item via ID, sends confirmation
 router.delete('/:id', async (req, res) => {
@@ -31,7 +39,6 @@ router.delete('/:id', async (req, res) => {
 })
 
 //Create New Item, ID is last part of Array
-
 
 //Update Existing Item
 
