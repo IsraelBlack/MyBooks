@@ -14,5 +14,6 @@ export interface Book extends BookData {
   id: number
 }
 
-export type Action = 
-| {type: 'SET_BOOKS', payload: Book[]}
+export type Action =
+  | { type: 'SET_BOOKS'; payload: Book[] }
+  | { type: 'DEL_BOOK'; payload: number }
