@@ -7,3 +7,7 @@ export async function fetchBooks() {
   const res = await request.get(booksURL)
   return res.body
 }
+
+export async function remove(id: number) {
+  await request.delete(`${booksURL}/${id}`)
+}

@@ -1,7 +1,7 @@
 //? DB Functions
 
 import connection from './connection'
-import { Book } from '../../models/types'
+import { Book, BookData } from '../../models/types'
 
 const db = connection
 
@@ -32,5 +32,19 @@ export function deleteBook(id: number): Promise<number> {
 }
 
 //create New Item
+export function addBook(book: BookData): Promise<Book[]> {
+  return db('books')
+    .insert(book)
+    .returning([
+      'id',
+      'title',
+      'author',
+      'cover',
+      'rating',
+      'summary',
+      'genre',
+      'opinion',
+    ])
+}
 
 //Update Existing item
