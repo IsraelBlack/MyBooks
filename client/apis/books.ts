@@ -1,5 +1,5 @@
-import request from "superagent";
-// todo import {} from '../../models/types'
+import request from 'superagent'
+import { BookData } from '../../models/types'
 
 const booksURL = '/api/v1/books'
 
@@ -10,4 +10,9 @@ export async function fetchBooks() {
 
 export async function remove(id: number) {
   await request.delete(`${booksURL}/${id}`)
+}
+
+export async function postBook(book: BookData) {
+  const res = await request.post(booksURL).send(book)
+  return res.body
 }

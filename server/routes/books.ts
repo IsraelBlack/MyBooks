@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
   try {
     const id = Number(req.params.id)
     const oneBook = await db.getOneBook(id)
-    res.json(oneBook)
+    res.json(oneBook[0])
   } catch (err) {
     console.error('Routes error', err)
   }
@@ -39,11 +39,11 @@ router.delete('/:id', async (req, res) => {
 })
 
 //Create New Item, ID is last part of Array
-router.post('/', async (req, res)=> {
+router.post('/', async (req, res) => {
   const book = req.body
   try {
     const newBook = await db.addBook(book)
-    res.json(newBook)
+    res.json(newBook[0])
   } catch (err) {
     console.error('Routes error: ', err)
     res.sendStatus(500)
