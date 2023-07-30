@@ -1,11 +1,12 @@
 //? Actions
 
-import {Book} from '../../models/types' 
-import { ThunkAction } from "../store"
-import * as api from  "../apis/books"
+import { Book, BookData } from '../../models/types'
+import { ThunkAction } from '../store'
+import * as api from '../apis/books'
 
 export const SET_BOOKS = 'SET_BOOKS'
 export const DEL_BOOK = 'DEL_BOOK'
+export const ADD_BOOK = 'ADD_BOOK'
 
 // *Simple Actions
 export function setBooks(books: Book[]) {
@@ -16,9 +17,16 @@ export function setBooks(books: Book[]) {
 }
 
 export function delBook(id: number) {
-  return { 
-    type: DEL_BOOK ,
-    payload: id
+  return {
+    type: DEL_BOOK,
+    payload: id,
+  }
+}
+
+export function addBook(book: BookData) {
+  return {
+    type: ADD_BOOK,
+    payload: book,
   }
 }
 
@@ -29,7 +37,7 @@ export function getBooks(): ThunkAction {
       const booksArr = await api.fetchBooks()
       dispatch(setBooks(booksArr))
     } catch (err) {
-      console.error('Error in action ', err)
+      console.error('Actions fail: ', err)
     }
   }
 }
@@ -42,6 +50,16 @@ export function delBookThunk(id: number): ThunkAction {
     } catch (err) {
       console.error('Actions fail: ', err)
     }
-    
-  } 
+  }
+}
+
+export function addBookThunk(book: BookData): ThunkAction {
+  return async (dispatch) => {
+    try {
+      const newBook = await api.postBook(book)
+      dispatch(addBook(newBook))
+    } catch (err) {
+      console.error('Actions fail: ', err)
+    }
+  }
 }
