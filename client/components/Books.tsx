@@ -3,12 +3,12 @@ import { useAppSelector, useAppDispatch } from '../hooks/hooks'
 import BookForm from './bookForm'
 import * as action from '../actions/books'
  
-function Books() {
+export default function Books() {
   const dispatch = useAppDispatch()
   const booksArr = useAppSelector((state) => state.books) as Book[]
 
 
-  const handleDelete = (id: number) => {
+   const handleDelete = (id: number) => {
     dispatch(action.delBookThunk(id))
   }
 

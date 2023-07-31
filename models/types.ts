@@ -1,9 +1,9 @@
 //? MODELS
 
 export interface BookData {
+  cover: string
   title: string
   author: string
-  cover: string
   rating: number
   summary: string
   genre: string
