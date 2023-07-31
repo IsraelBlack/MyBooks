@@ -8,7 +8,7 @@ export default function Books() {
   const booksArr = useAppSelector((state) => state.books) as Book[]
 
 
-   const handleDelete = (id: number) => {
+  const handleDelete = (id: number) => {
     dispatch(action.delBookThunk(id))
   }
 
