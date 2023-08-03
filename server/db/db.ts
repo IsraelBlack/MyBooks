@@ -24,6 +24,7 @@ export function getOneBook(id: number): Promise<Book[]> {
       'opinion',
     )
     .where({ id })
+    
 }
 
 //Delete Item via ID

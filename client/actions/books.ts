@@ -5,6 +5,7 @@ import { ThunkAction } from '../store'
 import * as api from '../apis/books'
 
 export const SET_BOOKS = 'SET_BOOKS'
+export const SET_ONEBOOK = 'SET_ONEBOOK'
 export const DEL_BOOK = 'DEL_BOOK'
 export const ADD_BOOK = 'ADD_BOOK'
 

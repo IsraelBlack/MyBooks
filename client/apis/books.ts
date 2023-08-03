@@ -8,6 +8,11 @@ export async function fetchBooks() {
   return res.body
 }
 
+export async function fetchOneBook(id: number) {
+  const res = await request.get(`${booksURL}/${id}`)
+  return res.body
+}
+
 export async function remove(id: number) {
   await request.delete(`${booksURL}/${id}`)
 }
