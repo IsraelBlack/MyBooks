@@ -17,6 +17,14 @@ export function setBooks(books: Book[]) {
   }
 }
 
+export function setOneBook(id: number, books: Book[]) {
+  return {
+    type: SET_ONEBOOK,
+    payload: id,
+    books,
+  }
+}
+
 export function delBook(id: number) {
   return {
     type: DEL_BOOK,
@@ -39,6 +47,17 @@ export function getBooks(): ThunkAction {
       dispatch(setBooks(booksArr))
     } catch (err) {
       console.error('Actions fail: ', err)
+    }
+  }
+}
+
+export function getOneBook(id: number): ThunkAction {
+  return async (dispatch) => {
+    try {
+      const booksArr = await api.fetchOneBook(id)
+      dispatch(setBooks(booksArr))
+    } catch (err) {
+      console.log('Actions failed: ', err)
     }
   }
 }
