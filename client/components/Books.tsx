@@ -2,7 +2,7 @@ import { useState} from 'react'
 import { Book } from '../../models/types'
 import { useAppSelector } from '../hooks/hooks'
 import BookForm from './bookForm'
-import SingleBook from './singleBook'
+import BookSummary from './BookSummary'
 
 export default function Books() {
   const [showForm, setShowForm] = useState(false)
@@ -16,7 +16,7 @@ export default function Books() {
       ) : (
         <div className="book-container">
           {booksArr.map((book) => (
-            <SingleBook key={book.id} book={book} />
+            <BookSummary key={book.id} book={book} />
           ))}
         </div>
       )}

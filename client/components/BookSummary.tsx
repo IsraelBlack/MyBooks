@@ -7,20 +7,14 @@ interface Props {
   book: Book
 }
 
-export default function SingleBook({ book }: Props) {
+export default function BookSummary({ book }: Props) {
   //const [showForm, setShowForm] = useState(false)
   //const [formData, setFormData] = useState(0)
-  const dispatch = useAppDispatch()
-
-  const handleDelete = (id: number) => {
-    dispatch(action.delBookThunk(id))
-  }
-
   //todo when made, add update book thunk
-  console.log(book.summary)
+
   return (
     <>
-      <div key={book.id} className="book-title">
+      <div className="book-title">
         <img
           src={`../../images/${book.cover}.jpg`}
           alt={`${book.title} cover`}
@@ -31,10 +25,6 @@ export default function SingleBook({ book }: Props) {
         <p>Summary: {book.summary}</p>
         <p>Genre: {book.genre}</p>
         <p>Opinion: {book.opinion}</p>
-        <p>
-          {' '}
-          <button onClick={() => handleDelete(book.id)}>Delete</button>
-        </p>
         {/* Insert Update Form Here */}
       </div>
     </>

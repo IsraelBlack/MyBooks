@@ -1,7 +1,7 @@
 //? Reducers
 
 import { Book, Action } from '../../models/types'
-import { SET_BOOKS, DEL_BOOK, ADD_BOOK } from '../actions/books'
+import { SET_BOOKS, DEL_BOOK, ADD_BOOK, SET_ONEBOOK } from '../actions/books'
 
 const initialState = [] as Book[]
 
@@ -10,6 +10,9 @@ export default function booksReducer(state = initialState, action: Action) {
   switch (type) {
     case SET_BOOKS:
       return payload
+
+      case SET_ONEBOOK:
+        return payload
 
     case DEL_BOOK:
       return state.filter((book) => book.id !== payload)

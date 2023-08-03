@@ -1,7 +1,7 @@
 import request from 'superagent'
 import { BookData } from '../../models/types'
 
-const booksURL = '/api/v1/books'
+const booksURL = 'api/v1/books'
 
 export async function fetchBooks() {
   const res = await request.get(booksURL)
