@@ -10,6 +10,7 @@ export async function fetchBooks() {
 
 export async function fetchOneBook(id: number) {
   const res = await request.get(`${booksURL}/${id}`)
+  console.log(res)
   return res.body
 }
 

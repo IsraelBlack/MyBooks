@@ -1,7 +1,4 @@
-import { Book, BookData } from '../../models/types'
-import { useAppDispatch } from '../hooks/hooks'
-import * as action from '../actions/books'
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { Book} from '../../models/types'
 
 interface Props {
   book: Book

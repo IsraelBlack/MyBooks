@@ -54,8 +54,9 @@ export function getBooks(): ThunkAction {
 export function getOneBook(id: number): ThunkAction {
   return async (dispatch) => {
     try {
-      const booksArr = await api.fetchOneBook(id)
-      dispatch(setBooks(booksArr))
+      const booksObj = await api.fetchOneBook(id)
+      dispatch(setOneBook(1, booksObj))
+      console.log('Fetching a book')
     } catch (err) {
       console.log('Actions failed: ', err)
     }
