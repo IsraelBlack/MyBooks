@@ -7,7 +7,14 @@ const db = connection
 
 //pull everything from our DB
 export function getAllBooks(): Promise<Book[]> {
-  return db('books').select('id', 'title', 'author', 'cover', 'rating')
+  return db('books').select(
+    'id',
+    'title',
+    'author',
+    'cover',
+    'rating',
+    'opinion',
+  )
 }
 
 //Select All Info of One book

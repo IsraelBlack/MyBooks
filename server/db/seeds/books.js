@@ -32,7 +32,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 3,
-      title: 'Project Hao; Mary',
+      title: 'Project Hail Mary',
       author: 'Andy Weir',
       cover: '',
       rating: '5',

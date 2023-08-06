@@ -20,7 +20,9 @@ router.get('/:id', async (req, res) => {
   try {
     const id = Number(req.params.id)
     const oneBook = await db.getOneBook(id)
+    console.log('One book')
     res.json(oneBook[0])
+    console.log(oneBook[0])
   } catch (err) {
     console.error('Routes error', err)
   }

@@ -6,6 +6,7 @@ import * as bookActions from '../actions/books'
 function App() {
   const dispatch = useAppDispatch()
 
+  //Find a way to add getSingle Book to work here (or comp with same name)
   useEffect(() => {
     dispatch(bookActions.getBooks())
   }, [dispatch])
