@@ -3,6 +3,7 @@ import { Book } from '../../models/types'
 import { useAppSelector } from '../hooks/hooks'
 import BookForm from './bookForm'
 import BookSummary from './BookSummary'
+import { Button, Typography } from '@mui/material'
 
 export default function Books() {
   const [showForm, setShowForm] = useState(false)
@@ -10,7 +11,9 @@ export default function Books() {
 
   return (
     <>
-      <button onClick={() => setShowForm(!showForm)}>Add Book</button>
+      <Button variant="outlined" onClick={() => setShowForm(!showForm)}>
+        Add Book
+      </Button>
       {showForm ? (
         <BookForm />
       ) : (
