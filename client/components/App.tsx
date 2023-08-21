@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useAppDispatch } from '../hooks/hooks'
 import Books from './Books'
 import * as bookActions from '../actions/books'
+import { Typography } from '@mui/material'
 
 function App() {
   const dispatch = useAppDispatch()
@@ -13,7 +14,7 @@ function App() {
   return (
     <>
       <header className="header">
-        <h1>My Collection</h1>
+        <Typography variant="h1">Book List</Typography>
         <Books />
       </header>
       <section className="main">{/* add your code here */}</section>

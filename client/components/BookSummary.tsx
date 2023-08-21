@@ -1,6 +1,8 @@
-import { Book} from '../../models/types'
+import { Book } from '../../models/types'
 import * as action from '../actions/books'
 import { useAppDispatch } from '../hooks/hooks'
+import { Typography } from '@mui/material'
+
 interface Props {
   book: Book
 }
@@ -9,7 +11,7 @@ export default function BookSummary({ book }: Props) {
   //const [showForm, setShowForm] = useState(false)
   //const [formData, setFormData] = useState(0)
   //todo when made, add update book thunk
-const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch()
 
   const handleDelete = (id: number) => {
     dispatch(action.delBookThunk(id))
@@ -21,10 +23,10 @@ const dispatch = useAppDispatch()
           src={`../../images/${book.cover}.jpg`}
           alt={`${book.title} cover`}
         />
-        <h1>{book.title}</h1>
-        <p>Author: {book.author}</p>
-        <p>Rating: {book.rating}</p>
-        <p>Opinion: {book.opinion}</p>
+        <Typography variant="h2">{book.title} </Typography>
+        <Typography variant='body1'>Author: {book.author}</Typography>
+        <Typography variant='body1'>Rating: {book.rating}</Typography>
+        <Typography variant='body1'>Opinion: {book.opinion}</Typography>
         <button onClick={() => handleDelete(book.id)}>Delete</button>
       </div>
     </>
