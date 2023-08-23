@@ -19,7 +19,7 @@ export default function BookSummary({ book }: Props) {
   return (
     <>
       <div className="book-title">
-        <img src={`../../${book.cover}`} alt={`${book.title} cover`} />
+        <img src={`../../images/${book.cover}`} alt={`${book.title} cover`} />
         <Typography variant="h2">{book.title} </Typography>
         <Typography variant="body1">Author: {book.author}</Typography>
         <Typography variant="body1">Rating: {book.rating}</Typography>

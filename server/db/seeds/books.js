@@ -34,7 +34,7 @@ exports.seed = async function (knex) {
       id: 3,
       title: 'Project Hail Mary',
       author: 'Andy Weir',
-      cover: 'project-hail-mary',
+      cover: 'project-hail-mary.jpg',
       rating: '5',
       summary:
         'Ryland Grace is the sole survivor on a desperate, last-chance mission—and if he fails, humanity and the earth itself will perish.',
