@@ -16,7 +16,7 @@ export default function BookForm() {
     })
   }
   const handleSubmit = (evt: FormEvent) => {
-    evt.preventDefault()
+    //evt.preventDefault()
     console.log('Submit', formData)
     dispatch(actions.addBookThunk(formData))
   }
