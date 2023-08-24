@@ -2,7 +2,7 @@ import { ChangeEvent, useState, FormEvent } from 'react'
 import { useAppDispatch } from '../hooks/hooks'
 import { BookData } from '../../models/types'
 import * as actions from '../actions/books'
-import { Button} from '@mui/material'
+import { Button } from '@mui/material'
 
 export default function BookForm() {
   const dispatch = useAppDispatch()
@@ -16,9 +16,10 @@ export default function BookForm() {
     })
   }
   const handleSubmit = (evt: FormEvent) => {
-    //evt.preventDefault()
+    evt.preventDefault()
     console.log('Submit', formData)
     dispatch(actions.addBookThunk(formData))
+    setFormData({} as BookData)
   }
   return (
     <>
@@ -27,10 +28,22 @@ export default function BookForm() {
         <input type="file" id="cover" name="cover" onChange={handleChange} />
 
         <label htmlFor="title">Title:</label>
-        <input type="text" id="title" name="title" onChange={handleChange} />
+        <input
+          type="text"
+          id="title"
+          name="title"
+          onChange={handleChange}
+          value={formData.title ?? ''}
+        />
 
         <label htmlFor="author">Author:</label>
-        <input type="text" id="author" name="author" onChange={handleChange} />
+        <input
+          type="text"
+          id="author"
+          name="author"
+          onChange={handleChange}
+          value={formData.author ?? ''}
+        />
 
         <label htmlFor="rating">Rating:</label>
         <input
@@ -38,15 +51,30 @@ export default function BookForm() {
           id="rating"
           name="rating"
           onChange={handleChange}
+          value={formData.rating ?? 0}
         />
 
         <label htmlFor="summary">Summary:</label>
-        <input type="text" id="rating" name="rating" onChange={handleChange} />
+        <input
+          type="text"
+          id="summary"
+          name="summary"
+          onChange={handleChange}
+          value={formData.summary ?? ''}
+        />
 
         <label htmlFor="genre">Genre:</label>
-        <input type="text" id="genre" name="genre" onChange={handleChange} />
+        <input
+          type="text"
+          id="genre"
+          name="genre"
+          onChange={handleChange}
+          value={formData.genre ?? ''}
+        />
 
-        <Button type="submit" value={'Submit'}>Submit</Button> 
+        <Button type="submit" value={'Submit'}>
+          Submit
+        </Button>
       </form>
     </>
   )
