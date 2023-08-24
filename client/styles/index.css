@@ -1,5 +1,3 @@
-
-
 body {
   position: absolute;
   top: 0;
@@ -7,6 +5,13 @@ body {
   margin: 0;
   padding: 20px;
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: bisque;
+}
+
+header {
+  text-align: center;
+  font-family: 'Bagel Fat One', cursive;
+  font-size: 2em;
 }
 
 /* Book Summary */
@@ -16,14 +21,35 @@ body {
   border: 1px black solid;
 }
 
-.book-title {
+.book-title{
   background-color: rgb(255, 241, 224);
   display: flex;
   flex-direction: column;
   margin: 15px;
-  padding: 10px
+  padding: 10px;
+  width:20%;
+  
 }
 
-#image {
+.book-title img{
+  position: relative;
   max-width: 250px;
+  left: 15%;
 }
+
+
+/*Add book form*/
+.add-form {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 20em;
+  margin-top: 10px;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .add-form{
+    left: 0;
+  }
+} 

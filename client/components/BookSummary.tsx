@@ -1,7 +1,7 @@
 import { Book } from '../../models/types'
 import * as action from '../actions/books'
 import { useAppDispatch } from '../hooks/hooks'
-import { Typography } from '@mui/material'
+import { Typography, Button } from '@mui/material'
 
 interface Props {
   book: Book
@@ -28,7 +28,9 @@ export default function BookSummary({ book }: Props) {
         <Typography variant="body1">Author: {book.author}</Typography>
         <Typography variant="body1">Rating: {book.rating}</Typography>
         <Typography variant="body1">Opinion: {book.opinion}</Typography>
-        <button onClick={() => handleDelete(book.id)}>Delete</button>
+        <Button variant="contained" onClick={() => handleDelete(book.id)}>
+          Delete
+        </Button>
       </div>
     </>
   )

@@ -2,17 +2,17 @@ import { ChangeEvent, useState, FormEvent } from 'react'
 import { useAppDispatch } from '../hooks/hooks'
 import { BookData } from '../../models/types'
 import * as actions from '../actions/books'
+import { Button} from '@mui/material'
 
 export default function BookForm() {
- const  dispatch = useAppDispatch()
-   const [formData, setFormData] = useState({} as BookData)
-  
+  const dispatch = useAppDispatch()
+  const [formData, setFormData] = useState({} as BookData)
 
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     console.log(evt.target.name, evt.target.value)
     setFormData({
       ...formData,
-      [evt.target.name]: evt.target.value
+      [evt.target.name]: evt.target.value,
     })
   }
   const handleSubmit = (evt: FormEvent) => {
@@ -22,7 +22,7 @@ export default function BookForm() {
   }
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="add-form">
         <label htmlFor="cover">Cover:</label>
         <input type="file" id="cover" name="cover" onChange={handleChange} />
 
@@ -30,12 +30,7 @@ export default function BookForm() {
         <input type="text" id="title" name="title" onChange={handleChange} />
 
         <label htmlFor="author">Author:</label>
-        <input
-          type="text"
-          id="author"
-          name="author"
-          onChange={handleChange}
-        />
+        <input type="text" id="author" name="author" onChange={handleChange} />
 
         <label htmlFor="rating">Rating:</label>
         <input
@@ -51,7 +46,7 @@ export default function BookForm() {
         <label htmlFor="genre">Genre:</label>
         <input type="text" id="genre" name="genre" onChange={handleChange} />
 
-        <input type="submit" value={'Submit'} />
+        <Button type="submit" value={'Submit'}>Submit</Button> 
       </form>
     </>
   )

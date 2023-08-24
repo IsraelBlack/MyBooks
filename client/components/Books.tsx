@@ -7,12 +7,13 @@ import { Button, Typography } from '@mui/material'
 
 export default function Books() {
   const [showForm, setShowForm] = useState(false)
+  
   const booksArr = useAppSelector((state) => state.books) as Book[]
 
   return (
     <>
       <Button variant="outlined" onClick={() => setShowForm(!showForm)}>
-        Add Book
+        Show/Hide form
       </Button>
       {showForm ? (
         <BookForm />
