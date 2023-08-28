@@ -8,6 +8,7 @@ export const SET_BOOKS = 'SET_BOOKS'
 export const SET_ONEBOOK = 'SET_ONEBOOK'
 export const DEL_BOOK = 'DEL_BOOK'
 export const ADD_BOOK = 'ADD_BOOK'
+export const UPDATE_RATING = 'UPDATE_RATING'
 
 // *Simple Actions
 export function setBooks(books: Book[]) {
@@ -36,6 +37,13 @@ export function addBook(book: BookData) {
   return {
     type: ADD_BOOK,
     payload: book,
+  }
+}
+
+export function updateRating(id: number, newRating: number) {
+  return {
+    type: UPDATE_RATING,
+    payload: newRating,
   }
 }
 
