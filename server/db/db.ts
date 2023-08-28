@@ -55,3 +55,6 @@ export function addBook(book: BookData): Promise<Book[]> {
 }
 
 //Update Existing item
+export function updateBook(id: number, newRating: number) {
+  return db('books').where({ id }).update({ rating: newRating })
+}
