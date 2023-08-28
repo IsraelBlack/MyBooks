@@ -10,7 +10,7 @@ exports.seed = async function (knex) {
       id: 1,
       title: 'Dune',
       author: 'Frank Herbert',
-      cover: '',
+      cover: 'dune-cover.jpg',
       rating: '4.5',
       summary:
         'Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the “spice” melange, a drug capable of extending life and enhancing consciousness. Coveted across the known universe, melange is a prize worth killing for...',
@@ -22,7 +22,7 @@ exports.seed = async function (knex) {
       id: 2,
       title: 'Piranesi',
       author: 'Susanna Clarke',
-      cover: '',
+      cover: 'piranesi.jpg',
       rating: '5',
       summary:
         'Piranesi’s house is no ordinary building: its rooms are infinite, its corridors endless, its walls are lined with thousands upon thousands of statues, each one different from all the others',
@@ -34,7 +34,7 @@ exports.seed = async function (knex) {
       id: 3,
       title: 'Project Hail Mary',
       author: 'Andy Weir',
-      cover: '',
+      cover: 'project-hail-mary.jpg',
       rating: '5',
       summary:
         'Ryland Grace is the sole survivor on a desperate, last-chance mission—and if he fails, humanity and the earth itself will perish.',
