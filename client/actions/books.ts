@@ -54,7 +54,7 @@ export function getBooks(): ThunkAction {
       const booksArr = await api.fetchBooks()
       dispatch(setBooks(booksArr))
     } catch (err) {
-      console.error('Actions fail: ', err)
+      console.error('Thunk fail: ', err)
     }
   }
 }
@@ -66,7 +66,7 @@ export function getOneBook(id: number): ThunkAction {
       dispatch(setOneBook(1, booksObj))
       console.log('Fetching a book')
     } catch (err) {
-      console.log('Actions failed: ', err)
+      console.log('Thunk failed: ', err)
     }
   }
 }
@@ -77,7 +77,7 @@ export function delBookThunk(id: number): ThunkAction {
       await api.remove(id)
       dispatch(delBook(id))
     } catch (err) {
-      console.error('Actions fail: ', err)
+      console.error('Thunk fail: ', err)
     }
   }
 }
@@ -88,7 +88,18 @@ export function addBookThunk(book: BookData): ThunkAction {
       const newBook = await api.postBook(book)
       dispatch(addBook(newBook))
     } catch (err) {
-      console.error('Actions fail: ', err)
+      console.error('Thunk fail: ', err)
+    }
+  }
+}
+
+export function updateRatingThunk(id: number, newRating: number) {
+  return async (dispatch) => {
+    try {
+      await api.updateRating(id, newRating)
+      dispatch(updateRating(id, newRating))
+    } catch (err) {
+      console.error('Thunk failed: ', err)
     }
   }
 }

@@ -26,4 +26,5 @@ export async function postBook(book: BookData) {
 
 export async function updateRating(id: number, newRating: number) {
   await req.patch(`${booksURL}/${id}`).send({rating: newRating})
+  
 }
