@@ -9,7 +9,27 @@ export default function UpdateForm() {
   const [formData, setFormData] = useState({} as BookData)
 
   //todo create handleChange
-  //todo create handleSubmit
+  const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    console.log(evt.target.name, evt.target.value)
+    setFormData({
+      ...formData,
+      [evt.target.name]: evt.target.value,
+    })
+  }
 
-  //todo create form 
+  //todo create handleSubmit
+  
+  //todo create form
+  return (
+    <form>
+      <label htmlFor="rating">Rating:</label>
+      <input
+        type="number"
+        id="rating"
+        name="rating"
+        onChange={handleChange}
+        value={formData.rating ?? 0}
+      />
+    </form>
+  )
 }

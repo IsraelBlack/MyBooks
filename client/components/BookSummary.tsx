@@ -28,6 +28,7 @@ export default function BookSummary({ book }: Props) {
         <Typography variant="body1">Author: {book.author}</Typography>
         <Typography variant="body1">Rating: {book.rating}</Typography>
         <Typography variant="body1">Opinion: {book.opinion}</Typography>
+        //todo Add update button
         <Button variant="contained" onClick={() => handleDelete(book.id)}>
           Delete
         </Button>
