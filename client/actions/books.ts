@@ -93,7 +93,7 @@ export function addBookThunk(book: BookData): ThunkAction {
   }
 }
 
-export function updateRatingThunk(id: number, newRating: number) {
+export function updateRatingThunk(id: number, newRating: number): ThunkAction {
   return async (dispatch) => {
     try {
       await api.updateRating(id, newRating)
