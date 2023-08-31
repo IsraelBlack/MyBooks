@@ -24,10 +24,10 @@ export default function UpdateForm() {
     dispatch(actions.addBookThunk(formData))
     setFormData({} as BookData)
   }
-  
+
   //todo create form
   return (
-    <form>
+    <form onSubmit={handleSubmit} className="update-form">
       <label htmlFor="rating">Rating:</label>
       <input
         type="number"
@@ -36,6 +36,9 @@ export default function UpdateForm() {
         onChange={handleChange}
         value={formData.rating ?? 0}
       />
+      <Button type="submit" value={'Submit'}>
+        Submit
+      </Button>
     </form>
   )
 }
