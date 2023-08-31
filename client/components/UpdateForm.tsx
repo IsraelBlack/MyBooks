@@ -18,6 +18,12 @@ export default function UpdateForm() {
   }
 
   //todo create handleSubmit
+  const handleSubmit = (evt: FormEvent) => {
+    evt.preventDefault()
+    console.log('Submit', formData)
+    dispatch(actions.addBookThunk(formData))
+    setFormData({} as BookData)
+  }
   
   //todo create form
   return (
