@@ -4,6 +4,8 @@ import { BookData } from '../../models/types'
 import * as actions from '../actions/books'
 import { Button } from '@mui/material'
 
+//This allows form is for adding a book
+
 export default function BookForm() {
   const dispatch = useAppDispatch()
   const [formData, setFormData] = useState({} as BookData)

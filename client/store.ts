@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware } from 'redux'
+import { configureStore } from '@reduxjs/toolkit'
 import thunkMiddleware from 'redux-thunk'
 import { composeWithDevTools } from '@redux-devtools/extension'
 import type { ThunkAction as BaseThunkAction } from 'redux-thunk'
@@ -14,14 +15,15 @@ export type ThunkAction<T = void> = BaseThunkAction<
   void,
   AnyAction
 >
+export const store = configureStore({
+  reducer: {},
+})
 
-export function initialiseStore() {
-  return createStore(
-    reducers,
-    composeWithDevTools(applyMiddleware(thunkMiddleware))
-  )
-}
-
-const store = initialiseStore()
+// export function initialiseStore() {
+//   return createStore(
+//     reducers,
+//     composeWithDevTools(applyMiddleware(thunkMiddleware))
+//   )
+// }
 
 export default store
