@@ -73,6 +73,7 @@
     "@reduxjs/toolkit": "^2.0.1",
     "express": "^4.18.2",
     "knex": "^2.3.0",
+    "redux-devtools-extension": "^2.13.9",
     "sqlite3": "^5.1.2",
     "superagent": "7.1.1",
     "ts-node": "^10.9.1"
