@@ -4,7 +4,7 @@ export const store = configureStore({
   reducer: {}, //TODO Add reducers once made
 })
 
-
+export type RootState = ReturnType<typeof store.getState>
 
 
 /* ************* */
