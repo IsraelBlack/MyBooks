@@ -3,7 +3,7 @@
 /************/
 
 import { Book, BookData } from '../../models/types'
-import { ThunkAction } from '../store'
+import { ThunkAction } from '../state/store'
 import * as api from '../apis/books'
 
 export const SET_BOOKS = 'SET_BOOKS'
