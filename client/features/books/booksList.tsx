@@ -5,12 +5,12 @@ const BooksList = () => {
   const books = useAppSelector(selectAllBooks)
 
   const renderedBooks = books.map(
-    (books: { id: number; title: string; author: string; summary: string }) => (
-      <article key={books.id}>
+    (book: { id: number; title: string; author: string; summary: string }) => (
+      <article key={book.id}>
         <h2>Test For Display</h2>
-        <h3>{books.title}</h3>
-        <h4>{books.author}</h4>
-        <p>{books.summary.substring(0, 100)}</p>
+        <h3>{book.title}</h3>
+        <h4>{book.author}</h4>
+        <p>{book.summary.substring(0, 100)}</p>
       </article>
     ),
   )
