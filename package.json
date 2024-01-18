@@ -70,6 +70,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.5",
     "@redux-devtools/extension": "^3.2.3",
+    "@reduxjs/toolkit": "^2.0.1",
     "express": "^4.18.2",
     "knex": "^2.3.0",
     "sqlite3": "^5.1.2",
