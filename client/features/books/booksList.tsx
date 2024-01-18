@@ -3,7 +3,7 @@ import { useAppSelector } from '../../hooks/hooks'
 import { selectAllBooks } from './bookSlice'
 
 const BooksList = () => {
-  const books = useAppSelector((state) => state.books)
+  const books = useAppSelector(selectAllBooks)
 
   const renderedBooks = books.map(
     (books: { id: number; title: string; author: string; summary: string }) => (
