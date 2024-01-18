@@ -7,7 +7,7 @@ const initialState = [] as Book[]
 const bookSlice = createSlice({
   name: 'books',
   initialState,
- reducers: {}
+  reducers: {}
 })
 
 export const selectAllBooks = (state: { books: any }) => state.books
