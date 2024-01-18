@@ -13,6 +13,13 @@ const BooksList = () => {
       </article>
     ),
   )
+
+  return (
+    <section>
+      <h2>Books</h2>
+      {renderedBooks}
+    </section>
+  )
 }
 
 export default BooksList
