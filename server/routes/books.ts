@@ -53,5 +53,17 @@ router.post('/', async (req, res) => {
 })
 
 //Update Existing Item
+router.patch('/:id', async(req, res)=>{
+  const id = Number(req.params.id)
+  const newRating= req.body.rating
+  try {
+    await db.updateBook(id, newRating)
+    res.sendStatus(200)
+  } catch (err) {
+    console.error('Routes error', err)
+    res.sendStatus(500)
+
+  }
+})
 
 export default router

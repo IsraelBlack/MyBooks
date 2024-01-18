@@ -19,3 +19,4 @@ export type Action =
   | { type: 'DEL_BOOK'; payload: number }
   | { type: 'ADD_BOOK'; payload: Book }
   | { type: 'SET_ONEBOOK'; payload: Book }
+  | { type: 'UPDATE_RATING'; payload: number }

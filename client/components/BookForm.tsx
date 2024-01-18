@@ -4,6 +4,8 @@ import { BookData } from '../../models/types'
 import * as actions from '../actions/books'
 import { Button } from '@mui/material'
 
+//This allows form is for adding a book
+
 export default function BookForm() {
   const dispatch = useAppDispatch()
   const [formData, setFormData] = useState({} as BookData)
@@ -22,61 +24,59 @@ export default function BookForm() {
     setFormData({} as BookData)
   }
   return (
-    <>
-      <form onSubmit={handleSubmit} className="add-form">
-        <label htmlFor="cover">Cover:</label>
-        <input type="file" id="cover" name="cover" onChange={handleChange} />
+    <form onSubmit={handleSubmit} className="add-form">
+      <label htmlFor="cover">Cover:</label>
+      <input type="file" id="cover" name="cover" onChange={handleChange} />
 
-        <label htmlFor="title">Title:</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          onChange={handleChange}
-          value={formData.title ?? ''}
-        />
+      <label htmlFor="title">Title:</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        onChange={handleChange}
+        value={formData.title ?? ''}
+      />
 
-        <label htmlFor="author">Author:</label>
-        <input
-          type="text"
-          id="author"
-          name="author"
-          onChange={handleChange}
-          value={formData.author ?? ''}
-        />
+      <label htmlFor="author">Author:</label>
+      <input
+        type="text"
+        id="author"
+        name="author"
+        onChange={handleChange}
+        value={formData.author ?? ''}
+      />
 
-        <label htmlFor="rating">Rating:</label>
-        <input
-          type="number"
-          id="rating"
-          name="rating"
-          onChange={handleChange}
-          value={formData.rating ?? 0}
-        />
+      <label htmlFor="rating">Rating:</label>
+      <input
+        type="number"
+        id="rating"
+        name="rating"
+        onChange={handleChange}
+        value={formData.rating ?? 0}
+      />
 
-        <label htmlFor="summary">Summary:</label>
-        <input
-          type="text"
-          id="summary"
-          name="summary"
-          onChange={handleChange}
-          value={formData.summary ?? ''}
-        />
+      <label htmlFor="summary">Summary:</label>
+      <input
+        type="text"
+        id="summary"
+        name="summary"
+        onChange={handleChange}
+        value={formData.summary ?? ''}
+      />
 
-        <label htmlFor="genre">Genre:</label>
-        <input
-          type="text"
-          id="genre"
-          name="genre"
-          onChange={handleChange}
-          value={formData.genre ?? ''}
-        />
+      <label htmlFor="genre">Genre:</label>
+      <input
+        type="text"
+        id="genre"
+        name="genre"
+        onChange={handleChange}
+        value={formData.genre ?? ''}
+      />
 
-        <Button type="submit" value={'Submit'}>
-          Submit
-        </Button>
-      </form>
-    </>
+      <Button type="submit" value={'Submit'}>
+        Submit
+      </Button>
+    </form>
   )
 }
 
