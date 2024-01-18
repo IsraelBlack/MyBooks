@@ -9,3 +9,5 @@ const bookSlice = createSlice({
   initialState,
  reducers: {}
 })
+
+export default bookSlice.reducer
