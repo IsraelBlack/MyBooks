@@ -19,7 +19,11 @@ const initialState = [
 const bookSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {},
+  reducers: {
+    bookAdded(state, action) {
+      state.push(action.payload)
+    }
+  },
 })
 
 export const selectAllBooks = (state: { books: any }) => state.books
