@@ -3,18 +3,20 @@ import { Book } from '../../../models/types'
 
 const initialState = [] as Book[]
 
-const bookSlice = createSlice({
+const booksSlice = createSlice({
   name: 'books',
-  initialState,
+  initialState: [] as Book[],
   reducers: {
-    bookAdded(state, action) {
-      state.push(action.payload)
+    bookAdded: (state, action) => {
+      // Use the spread operator to create a new array with the updated data
+      return [...state, action.payload]
     },
+    // ... other reducers
   },
 })
 
 export const selectAllBooks = (state: { books: any }) => state.books
 
-export const { bookAdded } = bookSlice.actions
+export const { bookAdded } = booksSlice.actions
 
-export default bookSlice.reducer
+export default booksSlice.reducer
