@@ -1,15 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { Book } from '../../../models/types'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { BookSummary } from '../../../models/types'
+import { nanoid } from '@reduxjs/toolkit'
 
-const initialState = [] as Book[]
+interface BookPayload {
+  id: string
+  title: string
+  author: string
+  summary: string
+}
 
 const booksSlice = createSlice({
   name: 'books',
-  initialState: [] as Book[],
+  initialState: [] as BookSummary[],
   reducers: {
-    bookAdded: (state, action) => {
-      // Use the spread operator to create a new array with the updated data
-      return [...state, action.payload]
+    bookAdded: (state, action: PayloadAction<BookPayload>) => {
+      state.push(action.payload)
     },
     // ... other reducers
   },
