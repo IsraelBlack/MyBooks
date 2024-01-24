@@ -10,12 +10,13 @@ export interface BookData {
   opinion: string
 }
 
-export interface Book extends BookData {
-  id: number
+export interface BookSummary {
+  id: string
+  title: string
+  author: string
+  summary: string
 }
 
-export type Action =
-  | { type: 'SET_BOOKS'; payload: Book[] }
-  | { type: 'DEL_BOOK'; payload: number }
-  | { type: 'ADD_BOOK'; payload: Book }
-  | { type: 'SET_ONEBOOK'; payload: Book }
+export interface Book extends BookData {
+  id: string
+}
