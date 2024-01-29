@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction, nanoid, createAsyncThunk} from '@reduxjs/toolkit'
 import { BookSummary } from '../../../models/types'
-import { nanoid } from '@reduxjs/toolkit'
+
 
 const prepareBookPayload = (title: string, author: string, summary: string) => {
   return {
@@ -22,7 +22,7 @@ const booksSlice = createSlice({
   },
 })
 
-export const selectAllBooks = (state: { books: any }) => state.books
+export const selectAllBooks = (state: { books: any }) => state.books.books
 
 export const { bookAdded } = booksSlice.actions
 
